@@ -1,5 +1,6 @@
 package com.eventoapp.Models;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
@@ -9,13 +10,24 @@ import javax.validation.constraints.NotBlank;
 public class Convidado{
 
     @Id
-    private String rg = "xxx.xxx.xxx-xx";
+    @Column(nullable = false)
+    @NotBlank
+    private String rg;
 
+    @Column(nullable = false)
     @NotBlank
     private String nomeConvidado;
 
     @ManyToOne
     private Evento evento;
+
+    public Evento getEvento() {
+        return evento;
+    }
+
+    public void setEvento(Evento evento) {
+        this.evento = evento;
+    }
 
     public String getRg() {
         return rg;
@@ -31,14 +43,6 @@ public class Convidado{
 
     public void setNomeConvidado(String nomeConvidado) {
         this.nomeConvidado = nomeConvidado;
-    }
-
-    public Evento getEvento() {
-        return evento;
-    }
-
-    public void setEvento(Evento evento) {
-        this.evento = evento;
     }
 
 }
