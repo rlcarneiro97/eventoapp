@@ -37,8 +37,8 @@
     <div class=" container adicionarConvidado">
         <h5>Adicionar Convidado:</h5>
         <form method="post">
-            <b>Nome: </b><input type="text" value="" name="nomeConvidado"/>
-            <b>RG: </b><input type="text" value="" name="rg"/>
+            <b>Nome: </b><input type="text" value="" name="nomeConvidado" required/>
+            <b>RG: </b><input type="text" value="" name="rg" required/>
             <th:block th:include="mensagemValidacao"></th:block>
             <button type="submit" class="waves-effect waves-light btn">Adicionar<i class="material-icons right">send</i></button>
         </form>

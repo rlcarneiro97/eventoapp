@@ -26,16 +26,16 @@
         </nav>
     </header>
         <form class="container cadastroEvento" method="post">
-            <b>Nome:</b><input type="text" value="" name="nome"/>
+            <b>Nome:</b><input type="text" value="" name="nome" required/>
             <div class="row">
                 <div class="input-field col s6">
-                    <b>Local:</b><input type="text" value="" name="local"/>
+                    <b>Local:</b><input type="text" value="" name="local" required/>
                 </div>
                 <div class="input-field col s3">
-                    <b>Data:</b><input type="date" value="" name="data"/>
+                    <b>Data:</b><input type="date" value="" name="data" required/>
                 </div>
                 <div class="input-field col s3">
-                    <b>Horario:</b><input type="time" value="" name="horario"/>
+                    <b>Horario:</b><input type="time" value="" name="horario" required/>
                 </div>
             </div>
             <th:block th:include="mensagemValidacao"></th:block>
