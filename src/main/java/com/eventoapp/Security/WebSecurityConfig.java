@@ -30,7 +30,8 @@ public class WebSecurityConfig {
         .antMatchers(HttpMethod.POST, "/cadastrarEvento").hasRole("ADMIN")
 		.anyRequest().authenticated()
 		.and().formLogin().loginPage("/login")
-        .defaultSuccessUrl("/eventos", true).permitAll()
+        .defaultSuccessUrl("/eventos", true)
+        .failureUrl("/login?error").permitAll()
         .and().logout().logoutRequestMatcher(new AntPathRequestMatcher("/logout"))
         .permitAll().logoutSuccessUrl("/login?logout");
 

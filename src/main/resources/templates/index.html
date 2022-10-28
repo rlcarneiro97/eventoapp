@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html lang="pt-br"
         xmlns:th="http://thymeleaf.org"
-        xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+        xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+        xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -18,9 +19,9 @@
     <header>
         <nav>
             <div class="nav-wrapper teal">
-                <a href="/eventos" class="brand-logo center">Lista de Eventos</a>
+                <a href="/eventos" class="brand-logo center">Lista de Eventos. Bem vindo <span sec:authentication="principal.username" style="text-transform:lowercase;">User</span>!</a>
                 <ul id="nav-mobile" class="right hide-on-med-and-down">
-                    <li><a href="/cadastrarEvento" class="waves-effect waves-light btn"><i class="material-icons left">add_circle_outline</i>Cadastrar Evento</a></li>
+                    <li sec:authorize="hasRole ('ROLE_ADMIN')"><a href="/cadastrarEvento" class="waves-effect waves-light btn"><i class="material-icons left">add_circle_outline</i>Cadastrar Evento</a></li>
                     <li><a href="/logout" class="waves-effect waves-light btn red lighten-1 pulse"><i class="material-icons left">exit_to_app</i>Sair</a></li>
                 </ul>
             </div>
