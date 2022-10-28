@@ -28,6 +28,7 @@ public class WebSecurityConfig {
 		.antMatchers(HttpMethod.GET, "/").permitAll()
         .antMatchers(HttpMethod.GET, "/cadastrarEvento").hasRole("ADMIN")
         .antMatchers(HttpMethod.POST, "/cadastrarEvento").hasRole("ADMIN")
+        .antMatchers(HttpMethod.GET, "/deletarEvento").hasRole("ADMIN")
 		.anyRequest().authenticated()
 		.and().formLogin().loginPage("/login")
         .defaultSuccessUrl("/eventos", true)

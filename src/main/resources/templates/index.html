@@ -22,7 +22,7 @@
                 <a href="/eventos" class="brand-logo center">Lista de Eventos. Bem vindo <span sec:authentication="principal.username" style="text-transform:lowercase;">User</span>!</a>
                 <ul id="nav-mobile" class="right hide-on-med-and-down">
                     <li sec:authorize="hasRole ('ROLE_ADMIN')"><a href="/cadastrarEvento" class="waves-effect waves-light btn"><i class="material-icons left">add_circle_outline</i>Cadastrar Evento</a></li>
-                    <li><a href="/logout" class="waves-effect waves-light btn red lighten-1 pulse"><i class="material-icons left">exit_to_app</i>Sair</a></li>
+                    <li><a href="/logout" class="waves-effect waves-light btn red lighten-1"><i class="material-icons left">exit_to_app</i>Sair</a></li>
                 </ul>
             </div>
         </nav>
@@ -43,7 +43,7 @@
                     <td><span th:text="${evento.local}"></span></td>
                     <td><span th:text="${evento.data}"></span></td>
                     <td><span th:text="${evento.horario}"></span></td>
-                    <td><a class="waves-effect waves-light btn-tiny" th:href="${(#mvc.url('EC#deletarEvento').arg(0, evento.codigo)).build()}"><i class="material-icons">delete</i></a></td>
+                    <td sec:authorize="hasRole ('ROLE_ADMIN')"><a class="waves-effect waves-light btn-tiny" th:href="${(#mvc.url('EC#deletarEvento').arg(0, evento.codigo)).build()}"><i class="material-icons">delete</i></a></td>
                 </tr>
             </tbody>
         </table>
