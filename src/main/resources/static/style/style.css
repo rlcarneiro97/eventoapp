@@ -54,34 +54,50 @@ button{
 
 .loginFormulario{
     display: center;
-    width: 25%;
-    height: 25%;
-    box-shadow: 0px 0px 5px grey;
-    border-radius: 1% 1%;
+    width: 30%;
+    height: 30%;
+    box-shadow: 0px 0px 10px grey;
+    border-radius: 3% 3%;
 }
 
 .entrarTitulo{
     text-align: center;
-    margin-top: 40%;
+    margin-top: 20%;
     padding-top: 1%;
     padding-bottom: 1%;
 }
 
 .formContainer{
     display: center;
-    padding-top: 4%;
-    padding-left: 8%;
-    padding-right: 8%;
+    padding-top: 2%;
+    padding-left: 10%;
+    padding-right: 10%;
     padding-bottom: 8%;
 }
 
 .btnLogin{
-    margin-top: 5%;
+    margin-top: 10%;
     margin-left: auto;
     margin-right: auto;
     display: block;
     width: 50%;
 }
+
+::-webkit-input-placeholder {
+    color: #546e7a;
+ }
+ 
+ :-moz-placeholder { /* Firefox 18- */
+    color: #546e7a;  
+ }
+ 
+ ::-moz-placeholder {  /* Firefox 19+ */
+    color: #546e7a;  
+ }
+ 
+ :-ms-input-placeholder {  
+    color: #546e7a;  
+ }
 
 .materialert{
     position: relative;

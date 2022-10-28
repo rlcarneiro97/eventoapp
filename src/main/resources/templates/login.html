@@ -15,7 +15,7 @@
     <title>Entrar</title>
 </head>
 <body>
-    <div class="container loginFormulario">
+    <div class="container loginFormulario blue-grey lighten-5">
         <div class="entrarTitulo">
             <h1>Entrar</h1>
         </div>
@@ -28,10 +28,12 @@
 		    Você foi desconectado.
 		</div>
         <form class="formContainer" th:action="@{/login}" method="post">
-            <div>
+            <div class="input-field col s6">
+                <i class="material-icons prefix">account_circle</i>
                 <input type="text" name="username" placeholder="Usuário" required/>
             </div>
-            <div>
+            <div class="input-field col s6">
+                <i class="material-icons prefix">lock</i>
                 <input type="password" name="password" placeholder="Senha" required/>
             </div>
             <div class="btnLogin">
