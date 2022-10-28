@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-br"
+        xmlns:th="http://thymeleaf.org"
+        xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
+    <!--Import materialize.css-->
+    <link type="text/css" rel="stylesheet" href="materialize/css/materialize.min.css"  media="screen,projection"/>
+    <link rel="stylesheet" href="style/style.css"/>
+    <!--Let browser know website is optimized for mobile-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Entrar</title>
+</head>
+<body>
+    <div class="container loginFormulario">
+        <div class="entrarTitulo">
+            <h1>Entrar</h1>
+        </div>
+        <div class="materialert warning" th:if="${param.error}">
+		    <div class="material-icons">warning</div>
+		    Usuário ou senha inválido(s).
+		</div>
+        <div class="materialert info" th:if="${param.logout}">
+		    <div class="material-icons">info_outline</div>
+		    Você foi desconectado.
+		</div>
+        <form class="formContainer" th:action="@{/login}" method="post">
+            <div>
+                <input type="text" name="username" placeholder="Usuário" required/>
+            </div>
+            <div>
+                <input type="password" name="password" placeholder="Senha" required/>
+            </div>
+            <div class="btnLogin">
+                <button type="submit" value="Log in" class="waves-effect waves-light btn-large">Salvar<i class="material-icons right">send</i></button>
+            </div>
+        </form>
+    </div>
+    <!--JavaScript at end of body for optimized loading-->
+    <script type="text/javascript" src="materialize/js/materialize.min.js"></script>
+</body>
+</html>

@@ -27,8 +27,10 @@ public class WebSecurityConfig {
 		http.csrf().disable().authorizeRequests()
 		.antMatchers(HttpMethod.GET, "/").permitAll()
 		.anyRequest().authenticated()
-		.and().formLogin().permitAll()
-		.and().logout().logoutRequestMatcher(new AntPathRequestMatcher("/logout"));
+		.and().formLogin().loginPage("/login")
+        .defaultSuccessUrl("/eventos", true).permitAll()
+        .and().logout().logoutRequestMatcher(new AntPathRequestMatcher("/logout"))
+        .permitAll().logoutSuccessUrl("/login?logout");
 
         return http.build();
 	}

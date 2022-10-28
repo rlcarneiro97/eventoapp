@@ -12,6 +12,11 @@ public class IndexController {
         return "redirect:/eventos";
     }
 
+    @RequestMapping(value = "/login")
+        public String login() {
+            return "login";
+        }
+
     @GetMapping("favicon.ico")
     @ResponseBody
     void returnNoFavicon() {
