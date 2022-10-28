@@ -19,10 +19,11 @@
     <header>
         <nav>
             <div class="nav-wrapper teal">
-                <a href="/eventos" class="brand-logo">Evento (<span th:text="${evento.nome}"></span>)</a>
+                <a href="/eventos" class="brand-logo center">Evento (<span th:text="${evento.nome}"></span>)</a>
                 <ul id="nav-mobile" class="right hide-on-med-and-down">
                 <li><a href="/eventos" class="waves-effect waves-light btn"><i class="material-icons left">format_list_bulleted</i>Lista de Eventos</a></li>
-                </ul>
+                <li><a href="/logout" class="waves-effect waves-light btn red lighten-1 pulse"><i class="material-icons left">exit_to_app</i>Sair</a></li>
+            </ul>
             </div>
         </nav>
     </header>
@@ -46,7 +47,7 @@
     <div class=" container listaConvidados">
         <h5>Lista de Convidados:</h5>
         <!-- <a onclick="M.toast({html: 'Testando 123!'})" class="btn">Toast!</a> -->
-        <table>
+        <table class="reponsive-table">
             <thead>
                 <tr>
                     <th>Nome</th>

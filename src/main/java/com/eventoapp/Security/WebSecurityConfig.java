@@ -26,6 +26,8 @@ public class WebSecurityConfig {
 	public SecurityFilterChain filterChain(HttpSecurity http) throws Exception{
 		http.csrf().disable().authorizeRequests()
 		.antMatchers(HttpMethod.GET, "/").permitAll()
+        .antMatchers(HttpMethod.GET, "/cadastrarEvento").hasRole("ADMIN")
+        .antMatchers(HttpMethod.POST, "/cadastrarEvento").hasRole("ADMIN")
 		.anyRequest().authenticated()
 		.and().formLogin().loginPage("/login")
         .defaultSuccessUrl("/eventos", true).permitAll()
